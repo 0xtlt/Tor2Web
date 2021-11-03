@@ -15,3 +15,5 @@ EXPOSE 8080
 
 ARG SCHEME
 ARG HOST
+
+CMD [ "/docker-gs-ping" ]
