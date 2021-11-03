@@ -14,7 +14,7 @@ type Server struct{}
 func (s Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	transport := &http.Transport{
 		Proxy: func(r *http.Request) (*url.URL, error) {
-			return url.Parse("socks5://localhost:9001")
+			return url.Parse("socks5://localhost:9050")
 		},
 	}
 	client := &http.Client{
