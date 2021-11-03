@@ -16,4 +16,9 @@ EXPOSE 8080
 ARG SCHEME
 ARG HOST
 
-CMD [ "/docker-gs-ping" ]
+RUN wget https://github.com/nicolas-van/multirun/releases/download/1.0.0/multirun-glibc-1.0.0.tar.gz && \
+  tar -zxvf multirun-glibc-1.0.0.tar.gz && \
+  mv multirun /bin && \
+  rm multirun-glibc-1.0.0.tar.gz
+
+ENTRYPOINT ["multirun", "tor", "/docker-gs-ping"]
